@@ -36,11 +36,12 @@ public class Faca : MonoBehaviour {
             status = 2;
             Dados.pontos++;
             Dados.facas--;
-            gameObject.name = "Faca";
             som.PlayOneShot(somAcerto);
             if (Dados.facas<=0) {
                 status = 4;
                 Dados.fim = true;
+            } else {
+                gameObject.name = "Faca";
             }
         } else if (status == 1 && other.gameObject.name == "Faca") {
             status = 3;
